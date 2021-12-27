@@ -25,6 +25,26 @@ void PrintArray(int[] array)
     }
     Console.WriteLine();
 }
+int[] EvevNumberArray(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0) count++;
+    }
+    int[] resultArray = new int[count];
+    count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0)
+        {
+            resultArray[count] = array[i];
+            count++;
+        }
+    }
+    return resultArray;
+}
 int[] array1 = CreateArray(8);
 FillArray(array1, 0, 10);
 PrintArray(array1);
+PrintArray(EvevNumberArray(array1));
